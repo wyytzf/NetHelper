@@ -1,4 +1,4 @@
-package helper.helper.httpstacks;
+package helper.httpstack;
 
 import android.os.Build;
 

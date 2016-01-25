@@ -4,7 +4,9 @@ import java.util.concurrent.BlockingDeque;
 
 import helper.Request;
 import helper.Response;
-import helper.helper.httpstacks.HttpStack;
+import helper.cache.Cache;
+import helper.cache.LruMemCache;
+import helper.httpstack.HttpStack;
 
 /**
  * Created by weiyuyang on 16-1-24.
@@ -14,9 +16,15 @@ public final class NetWorkExecutor extends Thread{
 
     private HttpStack mHttpStack;
 
+    /**
+     * static
+     */
     private static ResponseDelivery mResonseDelivery = new ResponseDelivery();
 
-    private static Cache<String, Response> mCache = new LruMenCache();
+    /**
+     * static
+     */
+    private static Cache<String, Response> mCache = new LruMemCache();
 
     private boolean isStop = false;
 

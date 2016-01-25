@@ -1,4 +1,4 @@
-package helper.helper.httpstacks;
+package helper.httpstack;
 
 import helper.Request;
 import helper.Response;

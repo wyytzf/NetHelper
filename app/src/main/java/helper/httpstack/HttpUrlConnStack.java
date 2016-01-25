@@ -1,11 +1,10 @@
-package helper.helper.httpstacks;
+package helper.httpstack;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.message.BasicHttpResponse;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 

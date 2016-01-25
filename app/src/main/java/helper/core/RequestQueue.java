@@ -1,13 +1,12 @@
 package helper.core;
 
 
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import helper.Request;
-import helper.helper.httpstacks.HttpStack;
+import helper.httpstack.HttpStack;
 
 /**
  * Created by weiyuyang on 16-1-24.

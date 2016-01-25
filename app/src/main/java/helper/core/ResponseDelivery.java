@@ -28,6 +28,6 @@ public class ResponseDelivery implements Executor {
 
     @Override
     public void execute(Runnable command) {
-
+        mResponseHandler.post(command);
     }
 }
