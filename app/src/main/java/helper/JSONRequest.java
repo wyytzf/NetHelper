@@ -7,6 +7,13 @@ import org.json.JSONObject;
  * Created by weiyuyang on 16-1-23.
  */
 public class JSONRequest extends Request<JSONObject> {
+
+    public JSONRequest(HttpMethod method,String url,RequestListener<JSONObject> listener){
+        super(method,url,listener);
+    }
+
+
+
     @Override
     public JSONObject parseResponse(Response response) {
         String JSONString = new String(response.getRawData());
@@ -18,9 +25,4 @@ public class JSONRequest extends Request<JSONObject> {
         return null;
     }
 
-
-    @Override
-    public int compareTo(Request<JSONObject> another) {
-        return 0;
-    }
 }

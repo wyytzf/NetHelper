@@ -33,7 +33,7 @@ public final class RequestQueue {
 
     private int mDispatcherNums = DEFAULT_CORE_NUMS;
 
-    private NetworkExecutor[] mDispathces = null;
+    private NetWorkExecutor[] mDispathces = null;
 
     private HttpStack mHttpStack;
 
@@ -48,7 +48,7 @@ public final class RequestQueue {
     }
 
     private final void startNetWorkExecutors(){
-        mDispathces = new NetworkExecutor[mDispatcherNums];
+        mDispathces = new NetWorkExecutor[mDispatcherNums];
     }
     public void start(){
         stop();

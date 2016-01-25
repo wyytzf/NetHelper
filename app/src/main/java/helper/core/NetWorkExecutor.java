@@ -37,15 +37,23 @@ public final class NetWorkExecutor extends Thread{
     public void run() {
         try {
             while (!isStop){
-            final Request<?> request;
-
+                final Request<?> request;
                 request = mRequestQueue.take();
+                if(request.isCanceled()){
+                    continue;
+                }
+                Response response = null;
+                if (isUseCache(request)){
+                    response = mCache.get(request.getUrl());
+                }else{
+                    response = mHttpStack.performRequest(request);
+                    if(request.ismShouldCache() && isSuccess(response)){
+                        mCache.put(request.getUrl(),response);
+                    }
+                }
 
-            if(request.isCanceled()){
-                continue;
+                mResonseDelivery.deliverResponse(request,response);
             }
-            Response response = null;
-        }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
